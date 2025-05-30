@@ -72,6 +72,18 @@ res.send(result)
 
 })
 
+app.get('/add-coffee/:email',async(req,res)=>{
+
+const email = req.params.email 
+
+const qury = {email:email} 
+
+const result = await coffeeColletions.find(qury).toArray() 
+res.send(result)
+
+
+})
+
 app.put('/coffees/:id',async(req,res)=>{
 
 
